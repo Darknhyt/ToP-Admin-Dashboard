@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    /*outline: 1px outset darkblue;*/
+    padding: 0.2em;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    color: gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 99vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: clamp(120px, 140px, 40vh) auto;
+    margin: 0;
+}
+
+#search-bar, #profile{
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    margin: 1em 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    &:hover {
+        background-color: #172554;
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: #1d4ed8;
+    }
+}
+hr{
+    padding: 0;
+    border: 1px solid #172554;
+}
+section {
+    grid-row: 1 / -1;
+    background-color: #1e3a8a;
+}
+
+header{
+    display: grid;
+    grid-template-columns: minmax(180px, 7fr) 3fr;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #172554;
+}
+input {
+    border-radius: 10px;
+    background-color: transparent;
+    width: 90%;
+    margin: 0 1em;
+}
+#profile{
+    justify-content: end;
+    gap: 0.8em;
+}
+#profile span:last-child{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0 0.6rem;
+}
+#title{
+    display: grid;
+    grid-template-columns: 70px minmax(180px, 1fr);
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    align-content: center;
+}
+#title > img{
+    grid-row: 1 / -1;
+}
+#title h3{
+    overflow: hidden;
+}
+.controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+button{
+    background-color: #1d4ed8;
+    border-radius: 10px;
+    color: white;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 0.4em 0.8em;
+    border: 1px outset #1e3a8a;
+    cursor: pointer;
+}
+#content{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+}
+#container{
+    display: grid;
+    gap: 0.6em;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+}
+#projects{
+    grid-row: 1 / -1;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px outset #1e3a8a;
+    background-color: #172554;
+}
+.cards div {
+    text-align: end;
+}
+#trend{
+    background-color: #100535;
+    border: 1px outset #0000a5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+#announ{
+    background-color: #100535;
+    border: 1px outset #0000a5;
+}
+
+.usr-trending {
+    display: grid;
+    grid-template-columns: 36px auto;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
+.usr-trending > img{
+    grid-row: 1 / -1;
+}
+.usr-trending span {
+    padding: 0;
+}
+.usr-trending span:last-child{
+    font-size: 0.8rem;
+}
