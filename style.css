@@ -4,6 +4,7 @@
     --secondary: #064663;
     --border: #DAFFFB;
     --focus: #2F58CD;
+    --text: antiquewhite;
 }
 * {
     box-sizing: border-box;
@@ -14,12 +15,12 @@
 
 body {
     background-color: var(--main);
-    color: antiquewhite;
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: clamp(120px, 140px, 40vh) auto;
+    grid-template-rows: min-content 1fr;
     margin: 0;
 }
 
@@ -52,6 +53,9 @@ hr {
 h1,h3{
     padding: 0.4em;
 }
+h2 {
+    padding-bottom: 0.4em;
+}
 h4 {
     padding: 0.6em 0;
     cursor: pointer;
@@ -77,11 +81,16 @@ input {
     background-color: transparent;
     width: 90%;
     margin: 0 1em;
+    color: var(--text);
+    padding: 0 0.6em;
 }
 #profile{
     justify-content: end;
     gap: 0.8em;
     cursor: pointer;
+}
+#profile > img {
+    border-radius: 50%;
 }
 #profile span:last-child{
     font-size: 1rem;
@@ -94,6 +103,7 @@ input {
     grid-template-rows: 1fr 1fr;
     align-items: center;
     align-content: center;
+    overflow: hidden;
 }
 #title > img{
     grid-row: 1 / -1;
