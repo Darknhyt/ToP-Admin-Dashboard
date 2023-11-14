@@ -1,15 +1,22 @@
+:root {
+    --main: #020204;
+    --container: #001C30; 
+    --secondary: #064663;
+    --border: #DAFFFB;
+    --focus: #2F58CD;
+}
 * {
     box-sizing: border-box;
     /*outline: 1px outset darkblue;*/
-    padding: 0.2em;
+    padding: 0;
     margin: 0;
 }
 
 body {
-    background-color: black;
-    color: gainsboro;
+    background-color: var(--main);
+    color: antiquewhite;
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 99vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: clamp(120px, 140px, 40vh) auto;
@@ -30,22 +37,31 @@ li {
     display: flex;
     align-items: center;
     font-weight: 700;
-    &:hover {
-        background-color: #172554;
-        cursor: pointer;
-    }
-
-    &:active {
-        background-color: #1d4ed8;
-    }
+    padding: 0.6em 1em;
 }
-hr{
-    padding: 0;
-    border: 1px solid #172554;
+li:hover {
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+hr {
+    padding: 0 !important;
+    border: 1px solid var(--border);
+    opacity: 0.2;
+    margin: 0.4em;
+}
+h1,h3{
+    padding: 0.4em;
+}
+h4 {
+    padding: 0.6em 0;
+    cursor: pointer;
+}
+h4:hover {
+    color: var(--focus);
 }
 section {
     grid-row: 1 / -1;
-    background-color: #1e3a8a;
+    background-color: var(--container);
 }
 
 header{
@@ -53,7 +69,8 @@ header{
     grid-template-columns: minmax(180px, 7fr) 3fr;
     align-items: center;
     justify-content: space-between;
-    background-color: #172554;
+    background-color: var(--container);
+    border: 1px solid var(--container);
 }
 input {
     border-radius: 10px;
@@ -64,6 +81,7 @@ input {
 #profile{
     justify-content: end;
     gap: 0.8em;
+    cursor: pointer;
 }
 #profile span:last-child{
     font-size: 1rem;
@@ -79,8 +97,9 @@ input {
 }
 #title > img{
     grid-row: 1 / -1;
+    border-radius: 50%;
 }
-#title h3{
+#title h2{
     overflow: hidden;
 }
 .controls{
@@ -89,26 +108,33 @@ input {
     align-items: center;
 }
 button{
-    background-color: #1d4ed8;
+    background-color: var(--secondary);
     border-radius: 10px;
     color: white;
     font-size: 1em;
     font-weight: bolder;
     padding: 0.4em 0.8em;
-    border: 1px outset #1e3a8a;
+    border: 1px outset var(--border);
     cursor: pointer;
+}
+button:hover {
+    background-color: var(--focus);
 }
 #content{
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: min-content 1fr;
     align-items: start;
+}
+#content > div {
+    padding: 0.6em;
 }
 #container{
     display: grid;
     gap: 0.6em;
     grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
 }
+
 #projects{
     grid-row: 1 / -1;
 }
@@ -116,23 +142,34 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px outset #1e3a8a;
-    background-color: #172554;
+    border: 1px outset var(--secondary);
+    background-color: var(--secondary);
+    border-radius: 5px;
+    padding: 0.4em 0.6em;
 }
 .cards div {
     text-align: end;
 }
+
 #trend{
-    background-color: #100535;
-    border: 1px outset #0000a5;
+    background-color: var(--container);
+    border: 1px outset var(--container);
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
 }
 
 #announ{
-    background-color: #100535;
-    border: 1px outset #0000a5;
+    border-radius: 5px;
+    padding: 0.6em;
+    background-color: var(--container);
+    border: 1px outset var(--container);
+}
+#announ div span {
+    padding: 1em 0;
+    cursor: pointer;
 }
 
 .usr-trending {
@@ -140,6 +177,11 @@ button{
     grid-template-columns: 36px auto;
     grid-template-rows: 1fr 1fr;
     align-items: center;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.usr-trending:hover {
+    background-color: var(--secondary);
 }
 .usr-trending > img{
     grid-row: 1 / -1;
@@ -149,4 +191,15 @@ button{
 }
 .usr-trending span:last-child{
     font-size: 0.8rem;
+}
+
+.material-symbols-outlined {
+  padding: 0.2em 0.2em 0 0;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.cards div .material-symbols-outlined:hover{
+    transform: scale(1.1);
+    color: var(--border);
 }
